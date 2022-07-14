@@ -1,12 +1,13 @@
 SYSTEM_HEADER_PROJECTS="libc kernel"
 PROJECTS="libc kernel"
+TOOLCHAIN_PREFIX=~/opt/cross/bin
 
 export MAKE=${MAKE:-make}
 export HOST=${HOST:-$(./default-host.sh)}
 
-export AR=${HOST}-ar
-export AS=${HOST}-as
-export CC=${HOST}-gcc
+export AR=$TOOLCHAIN_PREFIX/${HOST}-ar
+export AS=$TOOLCHAIN_PREFIX/${HOST}-as
+export CC=$TOOLCHAIN_PREFIX/${HOST}-gcc
 
 export PREFIX=/usr
 export EXEC_PREFIX=$PREFIX
