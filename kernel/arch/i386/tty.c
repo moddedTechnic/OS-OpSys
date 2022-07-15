@@ -23,7 +23,7 @@ void terminal_initialize(void) {
 	terminal_buffer = VGA_MEMORY;
 	for (size_t y = 0; y < VGA_HEIGHT; y++) {
 		for (size_t x = 0; x < VGA_WIDTH; x++) {
-			terminal_buffer[y * VGA_WIDTH + x;] = vga_entry(' ', terminal_color);
+			terminal_buffer[y * VGA_WIDTH + x] = vga_entry(' ', terminal_color);
 		}
 	}
 }
@@ -33,7 +33,7 @@ void terminal_setcolor(uint8_t color) {
 }
 
 void terminal_putentryat(unsigned char c, uint8_t color, size_t x, size_t y) {
-	terminal_buffer[y * VGA_WIDTH + x;] = vga_entry(c, color);
+	terminal_buffer[y * VGA_WIDTH + x] = vga_entry(c, color);
 }
 
 static void check_scroll() {
